@@ -20,6 +20,6 @@ go get github.com/disgoorg/disgo
 ## Explore
 
 {{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
+  {{< card link="https://pkg.go.dev/github.com/disgoorg/disgo" title="Docs" icon="book-open" >}}
   {{< card link="about" title="About" icon="user" >}}
 {{< /cards >}}

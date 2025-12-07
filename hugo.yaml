@@ -22,8 +22,8 @@ menu:
     - name: Docs
       pageRef: /docs
       weight: 1
-    - name: About
-      pageRef: /about
+    - name: Guide
+      pageRef: /guide
       weight: 2
     - name: Search
       weight: 4
@@ -64,3 +64,4 @@ params:
 
   displayUpdatedDate: true
   dateFormat: "January 2, 2006"
+  externalLinkDecoration: true
