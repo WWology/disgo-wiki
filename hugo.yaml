@@ -1,5 +1,6 @@
 # Hugo configuration file
-title: My Site
+title: DisGo Wiki
+copyright: © DisGo Contributors
 
 # import hextra as module
 module:
@@ -24,33 +25,42 @@ menu:
     - name: About
       pageRef: /about
       weight: 2
-    - name: Contact ↗
-      url: "https://github.com/imfing"
-      weight: 3
     - name: Search
       weight: 4
       params:
         type: search
     - name: GitHub
       weight: 5
-      url: "https://github.com/imfing/hextra-starter-template"
+      url: "https://github.com/disgoorg/disgo"
       params:
         icon: github
-    - name: Twitter
+    - name: Discord
       weight: 6
-      url: "https://twitter.com/"
+      url: "https://discord.gg/9tKpqXjYVC"
       params:
-        icon: x-twitter
+        icon: discord
+
+enableGitInfo: true
 
 params:
   navbar:
+    width: 200rem
     displayTitle: true
-    displayLogo: false
+    displayLogo: true
+    logo:
+      path: images/logo.png
 
   footer:
-    displayCopyright: false
+    displayCopyright: true
     displayPoweredBy: true
 
   editURL:
     enable: true
     base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+
+  theme:
+    default: system
+    displayToggle: true
+
+  displayUpdatedDate: true
+  dateFormat: "January 2, 2006"

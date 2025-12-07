@@ -1,9 +1,21 @@
 ---
-title: My Site
 toc: false
+weight: 2
 ---
 
-This is the landing page.
+<div class="hx:mt-6 hx:mb-6">
+{{< hextra/hero-headline >}}
+  A modular Golang Discord API Wrapper
+{{< /hextra/hero-headline >}}
+</div>
+
+  [DisGo](https://github.com/disgoorg/disgo) is a [Discord](https://discord.com/) API wrapper written in [Golang](https://golang.org/) aimed to be consistent, modular, customizable and less pain to use than other libraries.
+
+## Installing
+
+```bash
+go get github.com/disgoorg/disgo
+```
 
 ## Explore
 
@@ -11,7 +23,3 @@ This is the landing page.
   {{< card link="docs" title="Docs" icon="book-open" >}}
   {{< card link="about" title="About" icon="user" >}}
 {{< /cards >}}
-
-## Documentation
-
-For more information, visit [Hextra](https://imfing.github.io/hextra).
