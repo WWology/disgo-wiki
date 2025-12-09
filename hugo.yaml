@@ -51,7 +51,7 @@ enableGitInfo: true
 
 params:
   navbar:
-    width: 200rem
+    width: wide
     displayTitle: true
     displayLogo: true
     logo:
@@ -60,10 +60,6 @@ params:
   footer:
     displayCopyright: true
     displayPoweredBy: true
-
-  editURL:
-    enable: true
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
 
   displayUpdatedDate: true
   dateFormat: "January 2, 2006"
