@@ -1,9 +1,8 @@
 ---
-title: Getting Started
-prev: guide/first-page
-next: guide/folder/leaf
 sidebar:
   open: true
+build:
+  list: local
+  render: never
+weight: 2
 ---
-
-Pages can be organized into folders.

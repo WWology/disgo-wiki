@@ -36,5 +36,5 @@ go get github.com/disgoorg/disgolink
 
 {{< cards >}}
 {{< card link="https://pkg.go.dev/github.com/disgoorg/disgo" title="Docs" icon="arrow-up-right" >}}
-{{< card link="guide" title="Guide" icon="book-open" >}}
+{{< card link="guide/introduction" title="Guide" icon="book-open" >}}
 {{< /cards >}}

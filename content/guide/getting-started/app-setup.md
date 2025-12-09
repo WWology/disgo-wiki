@@ -1,7 +1,7 @@
 ---
-title: Leaf Page
+title: App Setup
 type: docs
-prev: guide/folder/
+prev: guide/introduction
 ---
 
 This page is under a folder.
