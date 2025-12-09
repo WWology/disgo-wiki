@@ -20,11 +20,18 @@ markup:
 menu:
   main:
     - name: Docs
-      pageRef: /docs
+      url: https://pkg.go.dev/github.com/disgoorg/disgo
       weight: 1
+      params:
+        type: link
+        icon: arrow-up-right
     - name: Guide
       pageRef: /guide
       weight: 2
+    - name: Theme Toggle
+      weight: 3
+      params:
+        type: theme-toggle
     - name: Search
       weight: 4
       params:
@@ -57,10 +64,6 @@ params:
   editURL:
     enable: true
     base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
-
-  theme:
-    default: system
-    displayToggle: true
 
   displayUpdatedDate: true
   dateFormat: "January 2, 2006"

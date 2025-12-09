@@ -9,17 +9,32 @@ weight: 2
 {{< /hextra/hero-headline >}}
 </div>
 
-  [DisGo](https://github.com/disgoorg/disgo) is a [Discord](https://discord.com/) API wrapper written in [Golang](https://golang.org/) aimed to be consistent, modular, customizable and less pain to use than other libraries.
+[DisGo](https://github.com/disgoorg/disgo) is a [Discord](https://discord.com/) API wrapper written in [Golang](https://golang.org/) aimed to be consistent, modular, customizable and less pain to use than other libraries.
 
 ## Installing
+
+{{< tabs items="DisGo, DisGoLink" >}}
+
+{{< tab >}}
 
 ```bash
 go get github.com/disgoorg/disgo
 ```
 
+{{< /tab >}}
+
+{{< tab >}}
+
+```bash
+go get github.com/disgoorg/disgolink
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
 ## Explore
 
 {{< cards >}}
-  {{< card link="https://pkg.go.dev/github.com/disgoorg/disgo" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
+{{< card link="https://pkg.go.dev/github.com/disgoorg/disgo" title="Docs" icon="arrow-up-right" >}}
+{{< card link="guide" title="Guide" icon="book-open" >}}
 {{< /cards >}}
