@@ -15,7 +15,7 @@ Including, but not limited to:
 <!-- TODO links to all the pages -->
 
 - How to create a [Discord Developer Account & Creating a bot](/guide/getting-started/app-setup)
-- How to scaffold a [DisGo project]()
+- How to scaffold a [DisGo project](/guide/disgo-bot/setting-up-your-bot/project-setup)
 - Dealing with common Discord API (e.g [components](), [reactions](), [embeds]())
 - And much much more
 
