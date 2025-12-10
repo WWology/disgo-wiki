@@ -15,14 +15,19 @@ weight: 2
 
 {{< tabs items="DisGo, DisGoLink" >}}
   {{< tab >}}
+
   ```bash
   go get github.com/disgoorg/disgo
   ```
+
   {{< /tab >}}
+
   {{< tab >}}
+
   ```bash
   go get github.com/disgoorg/disgolink
   ```
+
   {{< /tab >}}
 {{< /tabs >}}
 
