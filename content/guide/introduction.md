@@ -3,6 +3,7 @@ title: Introduction
 linkTitle: Introduction
 weight: 1
 next: guide/getting-started/app-setup
+breadcrumbs: false
 ---
 
 So you want to make a discord bot using go programming language?<br>

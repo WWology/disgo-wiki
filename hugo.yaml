@@ -26,7 +26,7 @@ menu:
         type: link
         icon: arrow-up-right
     - name: Guide
-      pageRef: /guide
+      pageRef: /introduction
       weight: 2
     - name: Theme Toggle
       weight: 3
@@ -50,6 +50,10 @@ menu:
 enableGitInfo: true
 
 params:
+  banner:
+    key: "work-in-progress"
+    message: |
+      🚧 This wiki is a work in progress. Please refer to the official [documentation](https://github.com/disgoorg/disgo) for the most accurate and up-to-date information. 🚧
   navbar:
     width: wide
     displayTitle: true
