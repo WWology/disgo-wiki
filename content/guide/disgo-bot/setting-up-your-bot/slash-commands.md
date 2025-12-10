@@ -22,7 +22,7 @@ The user will run the `/ping` command and the bot will respond with `Pong!`.
 {{% steps %}}
 
 ### Define the Command
-```go {filename="main.go", hl_lines=[4,5,6,7]}
+```go {filename="main.go"}
 var (
   token   = os.Getenv("DISCORD_BOT_TOKEN")
   guildID = snowflake.GetEnv("DISCORD_GUILD_ID")
@@ -56,18 +56,22 @@ You can register commands globally (available in all guilds your bot is in) or p
 
 We're going to take a look at how to register a command in a specific guild first, as it allows for faster testing and iteration. (*Also you don't want to deploy commands globally while you're still testing them!*)
 ```go {filename="main.go"}
-//... inside main function, after creating the client
+//... inside main function, before creating the client
 h := handler.New()
 h.SlashCommand("/ping", pingCommandHandler)
 if err := handler.SyncCommands(client, commands, []snowflake.ID{guildID}); err != nil {
   panic(err)
 }
+
+//... when creating the client
+    bot.WithEventListeners(h),
 ```
 
 This code snippet does a few things:
 1. It creates a new handler using `handler.New()`.
 2. It registers our `pingCommandHandler` function to handle the `/ping` command using `h.SlashCommand`.
 3. It synchronizes our defined commands with Discord using `handler.SyncCommands`, specifying the guild ID where we want to register the command.
+4. It adds the handler as an event listener to the bot client using `bot.WithEventListeners(h)`.
 
 {{% /steps %}}
 
@@ -166,3 +170,55 @@ Now try to run your bot and use the `/ping` command in your specified guild! You
 {{< callout type="info" emoji="💡">}}
   If you don't see the `/ping` command in your guild, try to refresh Discord (Ctrl + R / ⌘ + R) or wait a couple of minutes as sometimes it takes a bit of time for new commands to appear.
 {{< /callout >}}
+
+## Creating a Commands Directory
+If you've been following this tutorial, our project directory should now look like this
+{{< filetree/container >}}
+  {{< filetree/folder name="awesome-discord-bot" >}}
+    {{< filetree/file name="go.mod" >}}
+    {{< filetree/file name="go.sum">}}
+    {{< filetree/file name="main.go" >}}
+  {{< /filetree/folder >}}
+{{< /filetree/container >}}
+
+All our code is currently in the `main.go` file. While this is fine for small bots, as your bot grows in complexity, it's a good idea to start organizing your code into separate files and directories. This makes it easier to manage and maintain your codebase.
+
+Make a new folder called `📂commands/` in the root of your project directory. This folder will hold all your command-related code.
+
+Make a file in it called `commands.go` that will contain our slash command code.
+```go {filename="commands/commands.go"}
+package commands
+
+import (
+  "github.com/disgoorg/disgo/discord"
+  "github.com/disgoorg/disgo/handler"
+)
+
+var Commands = []discord.ApplicationCommandCreate{
+  discord.SlashCommandCreate{
+    Name:        "ping",
+    Description: "Respond with Pong!",
+  },
+}
+
+func PingCommandHandler(data discord.SlashCommandInteractionData, e *handler.CommandEvent) error {
+  return e.CreateMessage(discord.MessageCreate{
+    Content: "Pong!",
+  })
+}
+```
+
+Then, update your `main.go` file to use the new commands package.
+```go {filename="main.go", hl_lines=[3, 7, 8]}
+import(
+  //... other imports
+  "awesome-discord-bot/commands"
+)
+
+//... inside main function, after creating the client
+h.SlashCommand("/ping", commands.PingCommandHandler)
+if err := handler.SyncCommands(client, commands.Commands, []snowflake.ID{guildID}); err != nil {
+  panic(err)
+}
+```
+You can choose to add more commands in this file or create separate files for each command as your bot grows.
