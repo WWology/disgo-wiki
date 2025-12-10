@@ -50,8 +50,6 @@ menu:
 enableGitInfo: true
 
 params:
-  images:
-    - "/images/disgo-home-page.png"
   banner:
     key: "work-in-progress"
     message: |

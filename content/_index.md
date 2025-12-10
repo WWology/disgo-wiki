@@ -1,6 +1,8 @@
 ---
 toc: false
-weight: 2
+params:
+  images:
+    - "/images/disgo-home-page.png"
 ---
 
 <div class="hx:mt-6 hx:mb-6">
