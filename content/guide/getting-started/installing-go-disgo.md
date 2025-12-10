@@ -1,7 +1,7 @@
 ---
 title: Installing Go & DisGo
 prev: guide/getting-started/adding-bot
-next: guide/
+next: guide/disgo-bot/setting-up-your-bot/project-setup
 weight: 3
 ---
 
