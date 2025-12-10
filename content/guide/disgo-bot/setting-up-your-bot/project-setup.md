@@ -1,6 +1,7 @@
 ---
 title: Project Setup
 prev: guide/getting-started/installing-go-disgo
+next: guide/disgo-bot/setting-up-your-bot/project-directory
 weight: 1
 ---
 
@@ -17,24 +18,23 @@ You can set up a config file in `config.json`, `config.yaml`, / `config.toml` fi
 
 An example of a config file looks like this
 {{< tabs items="JSON, .env" >}}
+  {{< tab >}}
 
-{{< tab >}}
+  ```json {filename="config.json"}
+  {
+    "DISCORD_TOKEN": "insert-your-token-here"
+  }
+  ```
 
-```json {filename="config.json"}
-{
-  "DISCORD_TOKEN": "insert-your-token-here"
-}
-```
+  {{< /tab >}}
 
-{{< /tab >}}
+  {{< tab >}}
 
-{{< tab >}}
+  ```env {filename=".env"}
+  DISCORD_TOKEN=insert-your-token-here
+  ```
 
-```env {filename=".env"}
-DISCORD_TOKEN=insert-your-token-here
-```
-
-{{< /tab >}}
+  {{< /tab >}}
 {{< /tabs >}}
 
 Whichever way you choose to do it, just make sure that it's in your `.gitignore` file so that it doesn't get committed
