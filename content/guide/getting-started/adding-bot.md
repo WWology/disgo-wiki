@@ -3,6 +3,9 @@ title: Adding your Bot
 prev: guide/getting-started/app-setup
 next: guide/getting-started/installing-go-disgo
 weight: 2
+params:
+  images:
+    - "/images/getting-started/adding-your-bot.png"
 ---
 
 Remember our bot? It's now alive, but it's sitting in Discord jail and not in any server like it's supposed to, cause we haven't invited it to any server yet.
