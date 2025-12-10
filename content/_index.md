@@ -2,7 +2,7 @@
 toc: false
 params:
   images:
-    - "/images/disgo-home-page.png"
+    - "/images/disgo-home-page.jpg"
 ---
 
 <div class="hx:mt-6 hx:mb-6">
