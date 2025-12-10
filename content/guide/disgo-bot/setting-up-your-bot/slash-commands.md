@@ -42,17 +42,12 @@ It requires a `Name` and optionally a `Description`.<br>
 We defined our command, now we need to create a handler that will be called when a user uses our command.
 ```go {filename="main.go"}
 func pingCommandHandler(data discord.SlashCommandInteractionData, e *handler.CommandEvent) error {
-  if data.CommandName() == "ping" {
-    return e.CreateMessage(discord.MessageCreate{
-      Content: "Pong!",
-    })
-  }
-  return nil
+  return e.CreateMessage(discord.MessageCreate{
+    Content: "Pong!",
+  })
 }
 ```
 This function listens for `ApplicationCommandInteractionCreate` events, which are triggered when a user uses an application command (Slash Command being one of them).<br>
-It checks if the command name is `ping`, and if so, it responds with a message saying `Pong!`.
-
 
 ### Register the Command
 In order to use our command in Discord, we first need to register it with Discord's API.
@@ -110,12 +105,9 @@ var (
 )
 
 func pingCommandHandler(data discord.SlashCommandInteractionData, e *handler.CommandEvent) error {
-  if data.CommandName() == "ping" {
-    return e.CreateMessage(discord.MessageCreate{
-      Content: "Pong!",
-    })
-  }
-  return nil
+  return e.CreateMessage(discord.MessageCreate{
+    Content: "Pong!",
+  })
 }
 
 func main() {
@@ -141,6 +133,9 @@ func main() {
 
   h := handler.New()
   h.SlashCommand("/ping", pingCommandHandler)
+  if err := handler.SyncCommands(client, commands, []snowflake.ID{guildID}); err != nil {
+    panic(err)
+  }
 
   // Ensure we close the client on exit
   defer func() {
