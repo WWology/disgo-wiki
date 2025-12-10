@@ -1,6 +1,7 @@
 ---
 title: Slash Commands
 prev: guide/disgo-bot/setting-up-your-bot/main-file
+next: guide/disgo-bot/setting-up-your-bot/event-handling
 weight: 3
 ---
 
