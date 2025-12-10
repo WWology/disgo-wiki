@@ -27,20 +27,23 @@ package main
 
 import (
   "context"
+  "fmt"
   "os"
   "os/signal"
   "syscall"
+  "time"
 
   // Import DisGo packages
   "github.com/disgoorg/disgo"
   "github.com/disgoorg/disgo/bot"
+  "github.com/disgoorg/disgo/discord"
   "github.com/disgoorg/disgo/events"
   "github.com/disgoorg/disgo/gateway"
 )
 
 var (
   token   = os.Getenv("DISCORD_BOT_TOKEN")
-	guildID = snowflake.GetEnv("DISCORD_GUILD_ID")
+  guildID = snowflake.GetEnv("DISCORD_GUILD_ID")
 )
 
 func main() {
@@ -57,7 +60,7 @@ func main() {
     ),
     // Listen to the Ready event in order to know when the bot is connected
     bot.WithEventListenerFunc(func(e *events.Ready) {
-          fmt.Print("Bot is connected as", e.User.Username)
+          fmt.Println("Bot is connected as", e.User.Username)
     }),
   )
   if err != nil {
@@ -79,11 +82,11 @@ func main() {
   }
 
   // Wait here until CTRL+C or other term signal is received.
-  fmt.Print("Bot is now running. Press CTRL+C to exit.")
+  fmt.Println("Bot is now running. Press CTRL+C to exit.")
   s := make(chan os.Signal, 1)
   signal.Notify(s, syscall.SIGINT, syscall.SIGTERM)
   <-s
-  fmt.Print("Shutting down bot...")
+  fmt.Println("Shutting down bot...")
 }
 ```
 
