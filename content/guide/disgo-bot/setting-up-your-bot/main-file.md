@@ -1,6 +1,7 @@
 ---
 title: Main File
 prev: guide/disgo-bot/setting-up-your-bot/project-setup
+next: guide/disgo-bot/setting-up-your-bot/slash-commands
 weight: 2
 ---
 
@@ -37,9 +38,14 @@ import (
   "github.com/disgoorg/disgo/gateway"
 )
 
+var (
+  token   = os.Getenv("DISCORD_BOT_TOKEN")
+	guildID = snowflake.GetEnv("DISCORD_GUILD_ID")
+)
+
 func main() {
   // Create a new client instance
-  client, err := disgo.New("your-token-here",
+  client, err := disgo.New(token,
     // Set gateway configuration options
     bot.WithGatewayConfigOpts(
       // Set enabled intents
@@ -84,11 +90,11 @@ func main() {
 That's a lot of code, but don't worry if you don't understand everything right now.
 We'll break it down
 
-First we create a new DisGo client using our bot token (remember to replace `"your-token-here"` with your actual bot token you get from your config file or somewhere else).
+First we create a new DisGo client using our bot token
 ```go {filename="main.go", linenos=table, linenostart=16, hl_lines=[3]}
 func main() {
   // Create a new client instance
-  client, err := disgo.New("your-token-here",
+  client, err := disgo.New(token,
   //...
 
 ```
@@ -143,6 +149,7 @@ If you've been following along, your project structure should now look like this
 {{< filetree/container >}}
   {{< filetree/folder name="awesome-discord-bot" >}}
     {{< filetree/file name="go.mod" >}}
+    {{< filetree/file name="go.sum">}}
     {{< filetree/file name="main.go" >}}
   {{< /filetree/folder >}}
 {{< /filetree/container >}}
@@ -164,4 +171,4 @@ Congratulations! You've successfully set up the main file for your DisGo bot and
   **Remember**, never share your bot token with anyone or expose it in public repositories. Keep it secure!
 {{< /callout >}}
 
-Now we have a bot, but it doesn't do much yet. In the next section, we'll start adding some functionality to our bot to make it respond to messages!
+Now we have a bot, but it doesn't do much yet. In the next section, we'll start adding some functionality to our bot!
