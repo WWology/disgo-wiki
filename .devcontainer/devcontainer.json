@@ -19,7 +19,6 @@
     "vscode": {
       "extensions": [
         "eamodio.gitlens",
-        "esbenp.prettier-vscode",
         "redhat.vscode-yaml",
         "budparr.language-hugo-vscode"
       ]
