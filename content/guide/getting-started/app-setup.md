@@ -1,6 +1,5 @@
 ---
 title: App Setup
-type: docs
 prev: guide/introduction
 next: guide/getting-started/adding-bot
 weight: 1

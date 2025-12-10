@@ -1,6 +1,5 @@
 ---
 title: Adding your Bot
-type: docs
 prev: guide/getting-started/app-setup
 next: guide/getting-started/installing-go-disgo
 weight: 2
