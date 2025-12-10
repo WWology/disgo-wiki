@@ -1,7 +1,7 @@
 ---
 title: Project Setup
 prev: guide/getting-started/installing-go-disgo
-next: guide/disgo-bot/setting-up-your-bot/project-directory
+next: guide/disgo-bot/setting-up-your-bot/main-file
 weight: 1
 ---
 
