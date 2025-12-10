@@ -168,5 +168,5 @@ func main() {
 Now try to run your bot and use the `/ping` command in your specified guild! You should see your bot respond with `Pong!`. 🏓
 
 {{< callout type="info" emoji="💡">}}
-  If you don't see the `/ping` command in your guild, try to refresh Discord (Ctrl + R / Cmd + R) or wait a couple of minutes as sometimes it takes a bit of time for new commands to appear.
+  If you don't see the `/ping` command in your guild, try to refresh Discord (Ctrl + R / ⌘ + R) or wait a couple of minutes as sometimes it takes a bit of time for new commands to appear.
 {{< /callout >}}
