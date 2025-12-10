@@ -1,6 +1,4 @@
 ---
-sidebar:
-  open: true
 build:
   list: local
   render: never
